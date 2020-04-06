@@ -10,6 +10,8 @@ $route['process']									= 'f_login/process';
 $route['logout']									= 'f_login/logout';
 
 // backend
+$route['backoffice/dashboard']						= 'b_dashboard/index';
+
 $route['backoffice/blogs/list']						= 'b_blogs/index';
 $route['backoffice/blogs/add']						= 'b_blogs/add';
 $route['backoffice/blogs/edit/status/(:any)']		= 'b_blogs/status/$1';
