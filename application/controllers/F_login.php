@@ -26,7 +26,7 @@ class F_login extends CI_Controller {
 
 				echo "<script>
 					alert('Selamat, Anda berhasil login');
-					window.location='".site_url('backoffice/dashboard')."';
+					window.location='".site_url()."';
 					</script>";
 
 				}else{

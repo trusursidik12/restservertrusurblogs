@@ -10,8 +10,6 @@ $route['process']									= 'f_login/process';
 $route['logout']									= 'f_login/logout';
 
 // backend
-$route['backoffice/dashboard']						= 'b_dashboard/index';
-
 $route['backoffice/blogs/list']						= 'b_blogs/index';
 $route['backoffice/blogs/add']						= 'b_blogs/add';
 $route['backoffice/blogs/edit/status/(:any)']		= 'b_blogs/status/$1';
@@ -23,6 +21,6 @@ $route['backoffice/users/add']						= 'b_users/add';
 $route['backoffice/users/edit/(:any)']				= 'b_users/edit/$1';
 $route['backoffice/users/delete/(:any)']			= 'b_users/delete/$1';
 
-$route['default_controller'] 						= 'f_home';
+$route['default_controller'] 						= 'b_dashboard';
 $route['404_override']				= '';
 $route['translate_uri_dashes']		= FALSE;

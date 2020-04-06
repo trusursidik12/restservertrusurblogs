@@ -20,7 +20,7 @@
 		$ci =& get_instance();
 		$ci->load->library('fungsi');
 		if($ci->fungsi->user_login()->usr_lvl_id == 1){
-			redirect(site_url('backoffice/dashboard'));
+			redirect(site_url());
 		}
 	}
 
@@ -28,6 +28,6 @@
 		$ci =& get_instance();
 		$ci->load->library('fungsi');
 		if($ci->fungsi->user_login()->usr_lvl_id == 2){
-			redirect(site_url('backoffice/dashboard'));
+			redirect(site_url());
 		}
 	}
