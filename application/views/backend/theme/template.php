@@ -174,7 +174,7 @@
                 <?=$this->uri->uri_string() == 'backoffice/users/list'
                 || $this->uri->uri_string() == 'backoffice/users/add' ? 'active' : ''; ?>
                 ">
-                <i class="nav-icon fas fa-newspaper"></i>
+                <i class="nav-icon fas fa-users"></i>
                 <p>
                   Users
                 </p>
