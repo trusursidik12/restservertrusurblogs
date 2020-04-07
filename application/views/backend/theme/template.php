@@ -75,7 +75,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="<?= site_url() ?>" target="_blank" class="nav-link">Home</a>
+        <a href="<?= site_url() ?>" class="nav-link">Home</a>
       </li>
     </ul>
 
@@ -137,7 +137,7 @@
           <li class="nav-item">
             <a href="<?= site_url('backoffice/dashboard') ?>" class="nav-link
               <?=$this->uri->uri_string() == 'backoffice/dashboard'
-              || $this->uri->segment(1) == '' ? 'active' : ''; ?>
+              || $this->uri->uri_string() == '' ? 'active' : ''; ?>
               ">
               <i class="nav-icon fas fa-th-large"></i>
               <p>
@@ -149,12 +149,21 @@
           <li class="nav-item">
             <a href="<?= site_url('backoffice/blogs/list') ?>" class="nav-link
               <?=$this->uri->uri_string() == 'backoffice/blogs/list'
-              || $this->uri->uri_string() == 'backoffice/blogs/add'
-              || $this->uri->segment(1) == '' ? 'active' : ''; ?>
+              || $this->uri->uri_string() == 'backoffice/blogs/add' ? 'active' : ''; ?>
               ">
               <i class="nav-icon fas fa-newspaper"></i>
               <p>
                 Blogs
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= site_url('backoffice/message/list') ?>" class="nav-link
+              <?=$this->uri->uri_string() == 'backoffice/message/list' ? 'active' : ''; ?>
+              ">
+              <i class="nav-icon fas fa-envelope-open-text"></i>
+              <p>
+                Message
               </p>
             </a>
           </li>
@@ -163,8 +172,7 @@
             <li class="nav-item">
               <a href="<?= site_url('backoffice/users/list') ?>" class="nav-link
                 <?=$this->uri->uri_string() == 'backoffice/users/list'
-                || $this->uri->uri_string() == 'backoffice/users/add'
-                || $this->uri->segment(1) == '' ? 'active' : ''; ?>
+                || $this->uri->uri_string() == 'backoffice/users/add' ? 'active' : ''; ?>
                 ">
                 <i class="nav-icon fas fa-newspaper"></i>
                 <p>

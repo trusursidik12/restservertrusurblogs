@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 // api
 $route['api/blogs']									= 'b_blogs_api/blogs';
+$route['api/message']								= 'b_message_api/contactus';
 
 // frontend
 $route['login']										= 'f_login/login';
@@ -11,6 +12,9 @@ $route['logout']									= 'f_login/logout';
 
 // backend
 $route['backoffice/dashboard']						= 'b_dashboard/index';
+
+$route['backoffice/message/list']					= 'b_message/index';
+$route['backoffice/message/delete/(:any)']			= 'b_message/delete/$1';
 
 $route['backoffice/blogs/list']						= 'b_blogs/index';
 $route['backoffice/blogs/add']						= 'b_blogs/add';
