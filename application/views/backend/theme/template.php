@@ -167,6 +167,16 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="<?= site_url('backoffice/faqs/list') ?>" class="nav-link
+              <?=$this->uri->uri_string() == 'backoffice/faqs/list' ? 'active' : ''; ?>
+              ">
+              <i class="nav-icon fas fa-question-circle"></i>
+              <p>
+                FAQS
+              </p>
+            </a>
+          </li>
           <?php if($this->fungsi->user_login()->usr_lvl_id == '1') : ?>
             <li class="nav-header">ADMINISTRATOR</li>
             <li class="nav-item">
