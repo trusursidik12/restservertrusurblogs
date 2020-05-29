@@ -147,6 +147,17 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="<?= site_url('backoffice/slide/list') ?>" class="nav-link
+              <?=$this->uri->uri_string() == 'backoffice/slide/list'
+              || $this->uri->uri_string() == 'backoffice/slide/add' ? 'active' : ''; ?>
+              ">
+              <i class="nav-icon fas fa-images"></i>
+              <p>
+                Slide
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="<?= site_url('backoffice/blogs/list') ?>" class="nav-link
               <?=$this->uri->uri_string() == 'backoffice/blogs/list'
               || $this->uri->uri_string() == 'backoffice/blogs/add' ? 'active' : ''; ?>
@@ -174,6 +185,16 @@
               <i class="nav-icon fas fa-question-circle"></i>
               <p>
                 FAQS
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= site_url('backoffice/clients/list') ?>" class="nav-link
+              <?=$this->uri->uri_string() == 'backoffice/clients/list' ? 'active' : ''; ?>
+              ">
+              <i class="nav-icon fas fa-images"></i>
+              <p>
+                Clients
               </p>
             </a>
           </li>

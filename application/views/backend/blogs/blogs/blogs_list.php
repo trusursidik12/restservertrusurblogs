@@ -33,7 +33,8 @@
               <tr>
                 <th width="10">No</th>
                 <th>Blog Title</th>
-                <th>Status</th>
+                <th width="100" class="text-center">Status</th>
+                <th width="120" class="text-center">Images</th>
                 <th width="30">Actions</th>
               </tr>
               </thead>
@@ -42,7 +43,7 @@
                   <tr>
                     <td><?= $no++; ?></td>
                     <td><?= substr($data['blg_title'], 0, 30) ?> ..</td>
-                    <td>
+                    <td class="text-center">
                       <?php if($data['blg_status'] == '1')
                       { ?>
                         <div class="btn-group btn-group-sm"><a href="<?= site_url('backoffice/'.$controllers.'/edit/status/'.$data['blg_slug']) ?>" class='btn btn-primary'>Publish</a></div>
@@ -50,6 +51,13 @@
                       { ?>
                         <div class="btn-group btn-group-sm"><a href="<?= site_url('backoffice/'.$controllers.'/edit/status/'.$data['blg_slug']) ?>" class='btn btn-warning'>Draft</a></div>
                       <?php } ?>
+                    </td>
+                    <td class="text-center">
+                      <?php if ( $data['blg_image'] == 'noimageblogs.png' ) : ?>
+                        <img src="<?=base_url('assets/img/'.$controllers.'/noimageblogs/noimageblogs.png')?>" width="100" height="100">
+                      <?php else : ?>
+                        <img src="<?= base_url('assets/img/'.$controllers.'/'.$data['blg_image'].'')?>" width="100" height="100"></td>
+                      <?php endif ?>
                     </td>
                     <td>
                       <div class="btn-group btn-group-sm">

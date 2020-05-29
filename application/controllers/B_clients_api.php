@@ -4,12 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 require APPPATH . 'libraries/RestController.php';
 require APPPATH . 'libraries/Format.php';
 
-class B_faqs_api extends RestController {
+class B_clients_api extends RestController {
 
-	public function faqs_get()
+	public function clients_get()
 	{
 
-		$data = $this->b_faqs_api_m->get_faqs();
+		$data = $this->b_clients_api_m->get_clients();
 
 		if ($data) {
 			$this->response([

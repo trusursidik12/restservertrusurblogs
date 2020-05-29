@@ -32,22 +32,21 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form role="form" method="post">
+            <form role="form" action="<?= site_url('backoffice/'.$controllers.'/add') ?>" method="post">
               <div class="card-body">
                 <div class="form-group">
-                  <input type="Hidden" name="faq_id" value="<?= $faqs['faq_id'] ?>">
-                  <textarea name="faq_question" class="form-control <?= form_error('faq_question') == TRUE ? 'is-invalid' : ''; ?>" placeholder="Input Question .. *"><?= $faqs['faq_question'] ?></textarea>
+                  <textarea name="faq_question" placeholder="Input Question .. *" class="form-control <?= form_error('faq_question') == TRUE ? 'is-invalid' : ''; ?>"></textarea>
                   <a style="color: red;"><?= form_error('faq_question') ?></a>
                 </div>
                 <div class="form-group">
-                  <textarea name="faq_answer" class="form-control <?= form_error('faq_answer') == TRUE ? 'is-invalid' : ''; ?>" placeholder="Input Answer .. *"><?= $faqs['faq_answer'] ?></textarea>
+                  <textarea name="faq_answer" placeholder="Input Answer .." class="form-control"></textarea>
                 </div>
                 <div class="form-group">
-                  <input type="Text" name="faq_tags[]" value="<?= $faqs['faq_tags'] ?>" class="form-control <?= form_error('faq_tags[]') == TRUE ? 'is-invalid' : ''; ?>" data-role="tagsinput" placeholder="Tags (separated with ' , ') *">
+                  <input type="Text" name="faq_tags[]" class="form-control <?= form_error('faq_tags[]') == TRUE ? 'is-invalid' : ''; ?>" data-role="tagsinput" placeholder="Tags (separated with ' , ') *">
                   <a style="color: red;"><?= form_error('faq_tags[]') ?></a>
                 </div>
                 <div class="form-group">
-                  <button type="Submit" class="btn btn-primary"><i class="fas fa-save"></i> Update</button>
+                  <button type="Submit" class="btn btn-primary"><i class="fas fa-save"></i> Add</button>
                   <button type="Reset" class="btn btn-default"><i class="fas fa-sync-alt"></i> Reset</button>
                 </div>
               </div>

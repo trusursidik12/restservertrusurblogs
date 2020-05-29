@@ -32,22 +32,32 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form role="form" method="post">
+            <form role="form" method="post" enctype="multipart/form-data">
               <div class="card-body">
                 <div class="form-group">
-                  <input type="Hidden" name="faq_id" value="<?= $faqs['faq_id'] ?>">
-                  <textarea name="faq_question" class="form-control <?= form_error('faq_question') == TRUE ? 'is-invalid' : ''; ?>" placeholder="Input Question .. *"><?= $faqs['faq_question'] ?></textarea>
-                  <a style="color: red;"><?= form_error('faq_question') ?></a>
+                  <input type="Hidden" name="cln_id" value="<?= $clients['cln_id'] ?>">
+                  <input type="Text" name="cln_name" value="<?= $clients['cln_name'] ?>" class="form-control <?= form_error('cln_name') == TRUE ? 'is-invalid' : ''; ?>" placeholder="Enter Clients Name *">
+                  <a style="color: red;"><?= form_error('cln_name') ?></a>
                 </div>
                 <div class="form-group">
-                  <textarea name="faq_answer" class="form-control <?= form_error('faq_answer') == TRUE ? 'is-invalid' : ''; ?>" placeholder="Input Answer .. *"><?= $faqs['faq_answer'] ?></textarea>
+                  <div class="input-group">
+                    <div class="custom-file">
+                      <input type="Hidden" name="photos" value="<?= $clients['cln_image'] ?>">
+                      <input type="file" name="cln_image" accept=".gif,.jpg,.jpeg,.png" value="<?= $clients['cln_image'] ?>" class="custom-file-input <?= form_error('cln_image') == TRUE ? 'is-invalid' : ''; ?>">
+                      <label class="custom-file-label" for="exampleInputFile">Choose Images Clients *</label>
+                    </div>
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="">Upload</span>
+                    </div>
+                  </div>
+                  <a style="color: red;"><?= form_error('cln_image') ?></a>
                 </div>
                 <div class="form-group">
-                  <input type="Text" name="faq_tags[]" value="<?= $faqs['faq_tags'] ?>" class="form-control <?= form_error('faq_tags[]') == TRUE ? 'is-invalid' : ''; ?>" data-role="tagsinput" placeholder="Tags (separated with ' , ') *">
-                  <a style="color: red;"><?= form_error('faq_tags[]') ?></a>
+                  <input type="Text" name="cln_tags[]" value="<?= $clients['cln_tags'] ?>" class="form-control <?= form_error('cln_tags[]') == TRUE ? 'is-invalid' : ''; ?>" data-role="tagsinput" placeholder="Tags *">
+                  <a style="color: red;"><?= form_error('cln_tags[]') ?></a>
                 </div>
                 <div class="form-group">
-                  <button type="Submit" class="btn btn-primary"><i class="fas fa-save"></i> Update</button>
+                  <button type="Submit" class="btn btn-primary"><i class="fas fa-save"></i> Save</button>
                   <button type="Reset" class="btn btn-default"><i class="fas fa-sync-alt"></i> Reset</button>
                 </div>
               </div>

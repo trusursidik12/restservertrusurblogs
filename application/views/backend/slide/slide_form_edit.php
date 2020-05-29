@@ -32,22 +32,32 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form role="form" method="post">
+            <form role="form" method="post" enctype="multipart/form-data">
               <div class="card-body">
                 <div class="form-group">
-                  <input type="Hidden" name="faq_id" value="<?= $faqs['faq_id'] ?>">
-                  <textarea name="faq_question" class="form-control <?= form_error('faq_question') == TRUE ? 'is-invalid' : ''; ?>" placeholder="Input Question .. *"><?= $faqs['faq_question'] ?></textarea>
-                  <a style="color: red;"><?= form_error('faq_question') ?></a>
+                  <input type="Hidden" name="sld_id" value="<?= $slides['sld_id'] ?>">
+                  <input type="Text" name="sld_name" value="<?= $slides['sld_name'] ?>" class="form-control <?= form_error('sld_name') == TRUE ? 'is-invalid' : ''; ?>" placeholder="Enter Slide Name *">
+                  <a style="color: red;"><?= form_error('sld_name') ?></a>
                 </div>
                 <div class="form-group">
-                  <textarea name="faq_answer" class="form-control <?= form_error('faq_answer') == TRUE ? 'is-invalid' : ''; ?>" placeholder="Input Answer .. *"><?= $faqs['faq_answer'] ?></textarea>
+                  <div class="input-group">
+                    <div class="custom-file">
+                      <input type="Hidden" name="photos" value="<?= $slides['sld_image'] ?>">
+                      <input type="file" name="sld_image" accept=".gif,.jpg,.jpeg,.png" value="<?= $slides['sld_image'] ?>" class="custom-file-input <?= form_error('sld_image') == TRUE ? 'is-invalid' : ''; ?>">
+                      <label class="custom-file-label" for="exampleInputFile">Choose Images Slide *</label>
+                    </div>
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="">Upload</span>
+                    </div>
+                  </div>
+                  <a style="color: red;"><?= form_error('sld_image') ?></a>
                 </div>
                 <div class="form-group">
-                  <input type="Text" name="faq_tags[]" value="<?= $faqs['faq_tags'] ?>" class="form-control <?= form_error('faq_tags[]') == TRUE ? 'is-invalid' : ''; ?>" data-role="tagsinput" placeholder="Tags (separated with ' , ') *">
-                  <a style="color: red;"><?= form_error('faq_tags[]') ?></a>
+                  <input type="Text" name="sld_tags[]" value="<?= $slides['sld_tags'] ?>" class="form-control <?= form_error('sld_tags[]') == TRUE ? 'is-invalid' : ''; ?>" data-role="tagsinput" placeholder="Tags *">
+                  <a style="color: red;"><?= form_error('sld_tags[]') ?></a>
                 </div>
                 <div class="form-group">
-                  <button type="Submit" class="btn btn-primary"><i class="fas fa-save"></i> Update</button>
+                  <button type="Submit" class="btn btn-primary"><i class="fas fa-save"></i> Save</button>
                   <button type="Reset" class="btn btn-default"><i class="fas fa-sync-alt"></i> Reset</button>
                 </div>
               </div>

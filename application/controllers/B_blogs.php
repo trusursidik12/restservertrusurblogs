@@ -39,7 +39,8 @@ class B_blogs extends CI_Controller {
 			$config['allowed_types'] = 'gif|jpg|png|jpeg';
 
 			date_default_timezone_set('Asia/Jakarta');
-			$rename = date('d-m-Y His ').strtolower($this->input->post('blg_title'));
+			$slug 					= url_title($this->input->post('blg_title'));
+			$rename = date('d-m-Y His ').strtolower($slug);
 			$config['file_name'] = $rename;
 
 			$this->load->helper('file');
@@ -82,7 +83,8 @@ class B_blogs extends CI_Controller {
 			$config['allowed_types'] = 'gif|jpg|png|jpeg';
 
 			date_default_timezone_set('Asia/Jakarta');
-			$rename = date('d-m-Y His ').strtolower($this->input->post('blg_title'));
+			$slug 					= url_title($this->input->post('blg_title'));
+			$rename = date('d-m-Y His ').strtolower($slug);
 			$config['file_name'] = $rename;
 
 			$this->load->library('upload', $config);

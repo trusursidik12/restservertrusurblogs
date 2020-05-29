@@ -3,6 +3,19 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h3 class="card-title">
+            <a href="<?= site_url('backoffice/'.$controllers.'/add') ?>" ><button type="button" class="btn btn-block btn-primary"><i class="fas fa-plus-square"></i> <?= $title_menu ?></button></a>
+          </h3>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="<?= site_url() ?>">Home</a></li>
+            <li class="breadcrumb-item active"><?= $title_header; ?></li>
+          </ol>
+        </div>
+      </div>
     </div><!-- /.container-fluid -->
   </section>
 
@@ -19,7 +32,7 @@
               <thead>
               <tr>
                 <th width="10">No</th>
-                <th>Faqs</th>
+                <th>Question</th>
                 <th width="30">Actions</th>
               </tr>
               </thead>
@@ -27,11 +40,12 @@
                 <?php $no=1; foreach($faqs as $data) : ?>
                   <tr>
                     <td><?= $no++; ?></td>
-                    <td><?= substr($data['faq_desc'], 0, 30) ?> ..</td>
+                    <td><?= substr($data['faq_question'], 0, 150) ?> ..</td>
                     <td>
                       <div class="btn-group btn-group-sm">
                         <a href="#" class="btn btn-info" data-toggle="modal" data-target="#exampleModal<?= $data['faq_id'] ?>"><i class="fas fa-eye"></i></a>
-                        <a href="<?= site_url('backoffice/'.$controllers.'/edit/'.encrypt_url($data['faq_id'])) ?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                        <a href="<?= site_url('backoffice/'.$controllers.'/edit/'.$data['faq_slug']) ?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                        <a href="<?= site_url('backoffice/'.$controllers.'/delete/'.encrypt_url($data['faq_id'])) ?>" onclick="return confirm('Are you sure you want to Remove?');" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                       </div>
                     </td>
                   </tr>
@@ -53,7 +67,10 @@
                     <div class="modal-body">
                       <ul class="list-group list-group-unbordered mb-3">
                         <li class="list-group-item">
-                          Description : <?= $data['faq_desc']; ?>
+                          Question : <?= $data['faq_question']; ?>
+                        </li>
+                        <li class="list-group-item">
+                          Answer : <?= $data['faq_answer']; ?>
                         </li>
                         <li class="list-group-item">
                           Tags : 
