@@ -41,7 +41,7 @@
                 <div class="form-group">
                   <div class="input-group">
                     <div class="custom-file">
-                      <input type="file" name="sld_image" accept=".gif,.jpg,.jpeg,.png" class="custom-file-input <?= form_error('sld_image') == TRUE ? 'is-invalid' : ''; ?>">
+                      <input type="file" name="sld_image" accept=".jpg,.jpeg,.png" class="custom-file-input <?= form_error('sld_image') == TRUE ? 'is-invalid' : ''; ?>">
                       <label class="custom-file-label" for="exampleInputFile">Choose Images Slide *</label>
                     </div>
                     <div class="input-group-append">
